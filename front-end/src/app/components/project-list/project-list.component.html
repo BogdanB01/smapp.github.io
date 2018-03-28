@@ -1,0 +1,17 @@
+<div class="wrapper"> 
+
+    <div class="test" fxLayout="row" style="padding: 20px;">
+        
+        <div class="card" *ngFor="let proj of projects">
+            <app-project-card [project]="proj"> </app-project-card>
+        </div>
+
+    </div>
+
+    
+    <mat-paginator [length]="length"
+                   [pageSize]="pageSize"
+                   [pageSizeOptions]="pageSizeOptions"
+                   (page)="pageEvent = fakeServerData($event)">
+    </mat-paginator>
+</div>
